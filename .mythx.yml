@@ -10,14 +10,11 @@ analyze:
     remappings:
         - "@openzeppelin=node_modules/@openzeppelin"
     targets:
-        - contracts/SushiMaker.sol:SushiMaker
+        - contracts/RewardMaker.sol:RewardMaker
         - contracts/uniswapv2/UniswapV2Pair.sol:UniswapV2Pair
         - contracts/uniswapv2/UniswapV2Factory.sol:UniswapV2Factory
         - contracts/uniswapv2/UniswapV2ERC20.sol:UniswapV2ERC20
         - contracts/uniswapv2/UniswapV2Router02.sol:UniswapV2Router02
-        - contracts/SushiRoll.sol:SushiRoll
-        - contracts/SushiToken.sol:SushiToken
-        - contracts/SushiBar.sol:SushiBar
+        - contracts/RewardToken.sol:RewardToken
+        - contracts/StakeReward.sol:StakeReward
         - contracts/MasterChef.sol:MasterChef
-        - contracts/governance/Timelock.sol:Timelock
-        - contracts/Migrator.sol:Migrator

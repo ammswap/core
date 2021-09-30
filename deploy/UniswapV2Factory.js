@@ -15,10 +15,10 @@ module.exports = async function ({
   const { deployer, dev } = await getNamedAccounts();
 
   await deploy("UniswapV2Factory", {
-    contract: {
-      // abi,
-      // bytecode,
-    },
+    // contract: {
+    //   // abi,
+    //   // bytecode,
+    // },
     from: deployer,
     args: [dev],
     log: true,

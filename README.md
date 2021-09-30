@@ -1,4 +1,4 @@
-# SushiSwap
+# AMMSwap
 
 https://sushi.com/
 

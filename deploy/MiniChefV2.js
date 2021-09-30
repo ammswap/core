@@ -1,4 +1,4 @@
-const { SUSHI_ADDRESS } = require("@sushiswap/sdk");
+const { REWARD_ADDRESS } = require("@ammswap/sdk");
 
 module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
   const { deploy } = deployments;
@@ -7,19 +7,19 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
 
   const chainId = await getChainId();
 
-  let sushiAddress;
+  let rewardAddress;
 
   if (chainId === "31337") {
-    sushiAddress = (await deployments.get("SushiToken")).address;
-  } else if (chainId in SUSHI_ADDRESS) {
-    sushiAddress = SUSHI_ADDRESS[chainId];
+    rewardAddress = (await deployments.get("RewardToken")).address;
+  } else if (chainId in REWARD_ADDRESS) {
+    rewardAddress = REWARD_ADDRESS[chainId];
   } else {
-    throw Error("No SUSHI!");
+    throw Error("No REWARD!");
   }
 
   await deploy("MiniChefV2", {
     from: deployer,
-    args: [sushiAddress],
+    args: [rewardAddress],
     log: true,
     deterministicDeployment: false,
   });
