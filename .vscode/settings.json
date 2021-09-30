@@ -16,4 +16,14 @@
   "solidity.packageDefaultDependenciesDirectory": "node_modules",
   "solidity-va.deco.statevars": true,
   "solidity-va.preview.markdown": true,
+  "files.exclude": {
+
+  },
+  "search.exclude": {
+    "**/abi": true,
+    "**/artifact": true,
+    "**/cache": true,
+    "**/deployment": true,
+    "**/old-deployments": true,
+  },
 }
