@@ -3,9 +3,9 @@
 
 
 "@ammswap/sdk@^9.0.5":
-  version "9.0.4"
-  resolved "https://registry.yarnpkg.com/@ammswap/sdk/-/sdk-9.0.4.tgz#542d421c1c54bb6f49bcbdc2ea7326d7ffeb72d2"
-  integrity sha512-FET8RQpoJwAiIxb1TkHJECZxxwS6UNYM96s7QiO3AbSjO9sIRaYmx+weZzRX46NTxdqvKnxV3V1MthrSzNP+nA==
+  version "9.0.5"
+  resolved "https://registry.yarnpkg.com/@ammswap/sdk/-/sdk-9.0.5.tgz#b31abd95ffbf9d87ae8ed1013034c8afa7fa8ee8"
+  integrity sha512-TuWBq5CTFCR2/hgUKSMFCSn9rmWIyK7ex0oAZV8xJ/lcOwU6yibPLHHvFrvXhyX2BIzcIkM2v9VjiDQCleCRpg==
   dependencies:
     big.js "^6.1.0"
     decimal.js-light "^2.5.0"
