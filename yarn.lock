@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@ammswap/sdk@^9.0.2":
-  version "9.0.2"
-  resolved "https://registry.yarnpkg.com/@ammswap/sdk/-/sdk-9.0.2.tgz#72eecacbbc22793f3b47f0c0aed68d0893acaa8e"
-  integrity sha512-j8qrYODLxUnhUVfvYH6WNw9jqCId87Wo9HVbqa1eWAkzK4zwTmT9PkrIZankKZLYdHHdDs/xS+kBIajchz+NtA==
+"@ammswap/sdk@^9.0.5":
+  version "9.0.4"
+  resolved "https://registry.yarnpkg.com/@ammswap/sdk/-/sdk-9.0.4.tgz#542d421c1c54bb6f49bcbdc2ea7326d7ffeb72d2"
+  integrity sha512-FET8RQpoJwAiIxb1TkHJECZxxwS6UNYM96s7QiO3AbSjO9sIRaYmx+weZzRX46NTxdqvKnxV3V1MthrSzNP+nA==
   dependencies:
     big.js "^6.1.0"
     decimal.js-light "^2.5.0"

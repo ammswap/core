@@ -53,7 +53,7 @@
     "prepublishOnly": "yarn run build"
   },
   "devDependencies": {
-    "@ammswap/sdk": "^9.0.2",
+    "@ammswap/sdk": "^9.0.5",
     "@boringcrypto/boring-solidity": "boringcrypto/BoringSolidity#e06e943",
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-etherscan": "^2.1.0",
