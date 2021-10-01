@@ -50,7 +50,7 @@ const config: HardhatUserConfig = {
     },
     dev: {
       // Default to 1
-      default: 1,
+      default: "0x0D8e060CA2D847553ec14394ee6B304623E0d1d6",
       // dev address mainnet
       // 1: "",
     },
@@ -63,6 +63,7 @@ const config: HardhatUserConfig = {
       chainId: 1,
     },
     localhost: {
+      accounts,
       live: false,
       saveDeployments: true,
       tags: ["local"],
@@ -72,6 +73,7 @@ const config: HardhatUserConfig = {
         enabled: process.env.FORKING === "true",
         url: `https://eth-mainnet.alchemyapi.io/v2/${process.env.ALCHEMY_API_KEY}`,
       },
+      accounts,
       live: false,
       saveDeployments: true,
       tags: ["test", "local"],
@@ -127,12 +129,11 @@ const config: HardhatUserConfig = {
       gasMultiplier: 2,
     },
     fantom: {
-      url: "https://rpcapi.fantom.network",
+      url: "https://rpc.ftm.tools",
       accounts,
       chainId: 250,
       live: true,
       saveDeployments: true,
-      gasPrice: 22000000000,
     },
     "fantom-testnet": {
       url: "https://rpc.testnet.fantom.network",
