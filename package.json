@@ -1,6 +1,6 @@
 {
   "name": "@ammswap/core",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "license": "MIT",
   "types": "./types/index.ts",
   "description": "Core contracts for the AMMSwap protocol",
