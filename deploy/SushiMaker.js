@@ -8,8 +8,8 @@ module.exports = async function ({ ethers: { getNamedSigner }, getNamedAccounts,
   const chainId = await getChainId()
 
   const factory = await ethers.getContract("UniswapV2Factory")
-  const bar = await ethers.getContract("StakeReward")
-  const reward = await ethers.getContract("RewardToken")
+  const bar = await ethers.getContract("SwivelStaked")
+  const reward = await ethers.getContract("SwivelToken")
   
   let wethAddress;
   
@@ -36,4 +36,4 @@ module.exports = async function ({ ethers: { getNamedSigner }, getNamedAccounts,
 }
 
 module.exports.tags = ["RewardMaker"]
-module.exports.dependencies = ["UniswapV2Factory", "UniswapV2Router02", "StakeReward", "RewardToken"]
+module.exports.dependencies = ["UniswapV2Factory", "UniswapV2Router02", "SwivelStaked", "SwivelToken"]

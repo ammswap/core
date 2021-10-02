@@ -3,9 +3,9 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
 
   const { deployer } = await getNamedAccounts()
 
-  const reward = await deployments.get("RewardToken")
+  const reward = await deployments.get("SwivelToken")
 
-  await deploy("StakeReward", {
+  await deploy("SwivelStaked", {
     from: deployer,
     args: [reward.address],
     log: true,
@@ -13,5 +13,5 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
   })
 }
 
-module.exports.tags = ["StakeReward"]
-module.exports.dependencies = ["UniswapV2Factory", "UniswapV2Router02", "RewardToken"]
+module.exports.tags = ["SwivelStaked"]
+module.exports.dependencies = ["UniswapV2Factory", "UniswapV2Router02", "SwivelToken"]

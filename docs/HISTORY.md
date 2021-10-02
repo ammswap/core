@@ -2,9 +2,9 @@
 
 ## Early
 
-1. RewardToken Deployed
+1. SwivelToken Deployed
 2. MasterChef Deployed
-3. RewardToken Ownership Transfered to MasterChef
+3. SwivelToken Ownership Transfered to MasterChef
 4. TimeLock Deployed
 5. RewardFactory Deployed
 6. RewardRouter Deployed

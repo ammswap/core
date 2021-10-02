@@ -128,31 +128,31 @@ task("masterchef:withdraw", "MasterChef withdraw")
   await (await masterChef.connect(await getNamedSigner("dev")).withdraw(pid, amount)).wait()
 });
 
-task("bar:enter", "StakeReward enter")
+task("bar:enter", "SwivelStaked enter")
 .addParam("amount", "Amount")
 .setAction(async function ({ amount }, { ethers: { getNamedSigner } }, runSuper) {
-  const reward = await ethers.getContract("RewardToken")
+  const reward = await ethers.getContract("SwivelToken")
 
-  const bar = await ethers.getContract("StakeReward")
+  const bar = await ethers.getContract("SwivelStaked")
 
   await run("erc20:approve", { token: reward.address, spender: bar.address })
   
   await (await bar.connect(await getNamedSigner("dev")).enter(amount)).wait()
 });
 
-task("bar:leave", "StakeReward leave")
+task("bar:leave", "SwivelStaked leave")
 .addParam("amount", "Amount")
 .setAction(async function ({ amount }, { ethers: { getNamedSigner } }, runSuper) {
-  const reward = await ethers.getContract("RewardToken")
+  const reward = await ethers.getContract("SwivelToken")
 
-  const bar = await ethers.getContract("StakeReward")
+  const bar = await ethers.getContract("SwivelStaked")
 
   await run("erc20:approve", { token: reward.address, spender: bar.address })
   
   await (await bar.connect(await getNamedSigner("dev")).leave(amount)).wait()
 });
 
-task("maker:serve", "StakeReward serve")
+task("maker:serve", "SwivelStaked serve")
 .addParam("a", "Token A")
 .addParam("b", "Token B")
 .setAction(async function ({ a, b }, { ethers: { getNamedSigner } }, runSuper) {

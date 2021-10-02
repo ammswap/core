@@ -6,10 +6,10 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/math/SafeMath.sol";
 
-// StakeReward is the coolest bar in town. You come in with some Reward, and leave with more! The longer you stay, the more Reward you get.
+// SwivelStaked is the coolest bar in town. You come in with some Reward, and leave with more! The longer you stay, the more Reward you get.
 //
 // This contract handles swapping to and from xReward, AMMSwap's staking token.
-contract StakeReward is ERC20("StakeReward", "xREWARD"){
+contract SwivelStaked is ERC20("xSwivelStaked", "xSVL"){
     using SafeMath for uint256;
     IERC20 public reward;
 
@@ -37,6 +37,19 @@ contract StakeReward is ERC20("StakeReward", "xREWARD"){
         // Lock the Reward in the contract
         reward.transferFrom(msg.sender, address(this), _amount);
     }
+
+    function getExchangeRate() public view returns (uint256) {
+        return (reward.balanceOf(address(this)) * 1e18) / totalSupply();
+    }
+
+    function toREWARD(uint256 stakedAmount) public view returns (uint256 rewardAmount) {
+        rewardAmount = (stakedAmount * reward.balanceOf(address(this))) / totalSupply();
+    }
+
+    function toSTAKED(uint256 rewardAmount) public view returns (uint256 stakedAmount) {
+        stakedAmount = (rewardAmount * totalSupply()) / reward.balanceOf(address(this));
+    }
+
 
     // Leave the bar. Claim back your REWARDs.
     // Unlocks the staked + gained Reward and burns xReward

@@ -3,7 +3,7 @@ import { prepare, deploy, getBigNumber, createSLP } from "./utilities"
 
 describe("RewardMaker", function () {
   before(async function () {
-    await prepare(this, ["RewardMaker", "StakeReward", "RewardMakerExploitMock", "ERC20Mock", "UniswapV2Factory", "UniswapV2Pair"])
+    await prepare(this, ["RewardMaker", "SwivelStaked", "RewardMakerExploitMock", "ERC20Mock", "UniswapV2Factory", "UniswapV2Pair"])
   })
 
   beforeEach(async function () {
@@ -16,7 +16,7 @@ describe("RewardMaker", function () {
       ["strudel", this.ERC20Mock, ["$TRDL", "$TRDL", getBigNumber("10000000")]],
       ["factory", this.UniswapV2Factory, [this.alice.address]],
     ])
-    await deploy(this, [["bar", this.StakeReward, [this.reward.address]]])
+    await deploy(this, [["bar", this.SwivelStaked, [this.reward.address]]])
     await deploy(this, [["rewardMaker", this.RewardMaker, [this.factory.address, this.bar.address, this.reward.address, this.weth.address]]])
     await deploy(this, [["exploiter", this.RewardMakerExploitMock, [this.rewardMaker.address]]])
     await createSLP(this, "rewardEth", this.reward, this.weth, getBigNumber(10))

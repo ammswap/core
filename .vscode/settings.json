@@ -23,7 +23,7 @@
     "**/abi": true,
     "**/artifact": true,
     "**/cache": true,
-    "**/deployment": true,
-    "**/old-deployments": true,
+    "**/deployments": true,
+    "**/old-deployments": true
   },
 }

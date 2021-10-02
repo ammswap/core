@@ -1,9 +1,9 @@
 import { ethers } from "hardhat";
 import { expect } from "chai";
 
-describe("RewardToken", function () {
+describe("SwivelToken", function () {
   before(async function () {
-    this.RewardToken = await ethers.getContractFactory("RewardToken")
+    this.SwivelToken = await ethers.getContractFactory("SwivelToken")
     this.signers = await ethers.getSigners()
     this.alice = this.signers[0]
     this.bob = this.signers[1]
@@ -11,7 +11,7 @@ describe("RewardToken", function () {
   })
 
   beforeEach(async function () {
-    this.reward = await this.RewardToken.deploy()
+    this.reward = await this.SwivelToken.deploy()
     await this.reward.deployed()
   })
 
@@ -19,7 +19,7 @@ describe("RewardToken", function () {
     const name = await this.reward.name()
     const symbol = await this.reward.symbol()
     const decimals = await this.reward.decimals()
-    expect(name, "RewardToken")
+    expect(name, "SwivelToken")
     expect(symbol, "REWARD")
     expect(decimals, "18")
   })

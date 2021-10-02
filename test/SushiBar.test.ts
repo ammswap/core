@@ -1,10 +1,10 @@
 import { ethers } from "hardhat";
 import { expect } from "chai";
 
-describe("StakeReward", function () {
+describe("SwivelStaked", function () {
   before(async function () {
-    this.RewardToken = await ethers.getContractFactory("RewardToken")
-    this.StakeReward = await ethers.getContractFactory("StakeReward")
+    this.SwivelToken = await ethers.getContractFactory("SwivelToken")
+    this.SwivelStaked = await ethers.getContractFactory("SwivelStaked")
 
     this.signers = await ethers.getSigners()
     this.alice = this.signers[0]
@@ -13,8 +13,8 @@ describe("StakeReward", function () {
   })
 
   beforeEach(async function () {
-    this.reward = await this.RewardToken.deploy()
-    this.bar = await this.StakeReward.deploy(this.reward.address)
+    this.reward = await this.SwivelToken.deploy()
+    this.bar = await this.SwivelStaked.deploy(this.reward.address)
     this.reward.mint(this.alice.address, "100")
     this.reward.mint(this.bob.address, "100")
     this.reward.mint(this.carol.address, "100")
@@ -44,7 +44,7 @@ describe("StakeReward", function () {
     expect(await this.bar.balanceOf(this.alice.address)).to.equal("20")
     expect(await this.bar.balanceOf(this.bob.address)).to.equal("10")
     expect(await this.reward.balanceOf(this.bar.address)).to.equal("30")
-    // StakeReward get 20 more REWARDs from an external source.
+    // SwivelStaked get 20 more REWARDs from an external source.
     await this.reward.connect(this.carol).transfer(this.bar.address, "20", { from: this.carol.address })
     // Alice deposits 10 more REWARDs. She should receive 10*30/50 = 6 shares.
     await this.bar.enter("10")

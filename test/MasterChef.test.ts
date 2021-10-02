@@ -13,12 +13,12 @@ describe("MasterChef", function () {
     this.minter = this.signers[4]
 
     this.MasterChef = await ethers.getContractFactory("MasterChef")
-    this.RewardToken = await ethers.getContractFactory("RewardToken")
+    this.SwivelToken = await ethers.getContractFactory("SwivelToken")
     this.ERC20Mock = await ethers.getContractFactory("ERC20Mock", this.minter)
   })
 
   beforeEach(async function () {
-    this.reward = await this.RewardToken.deploy()
+    this.reward = await this.SwivelToken.deploy()
     await this.reward.deployed()
   })
 

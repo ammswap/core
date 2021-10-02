@@ -7,12 +7,12 @@ const { BigNumber } = require("ethers")
 
 describe("MiniChefV2", function () {
   before(async function () {
-    await prepare(this, ["MiniChefV2", "RewardToken", "ERC20Mock", "RewarderMock", "RewarderBrokenMock"])
+    await prepare(this, ["MiniChefV2", "SwivelToken", "ERC20Mock", "RewarderMock", "RewarderBrokenMock"])
     await deploy(this, [["brokenRewarder", this.RewarderBrokenMock]])
   })
 
   beforeEach(async function () {
-    await deploy(this, [["reward", this.RewardToken]])
+    await deploy(this, [["reward", this.SwivelToken]])
 
     await deploy(this, [
       ["lp", this.ERC20Mock, ["LP Token", "LPT", getBigNumber(10)]],

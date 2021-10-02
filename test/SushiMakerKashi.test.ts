@@ -5,7 +5,7 @@ import { prepare, deploy, getBigNumber, createSLP } from "./utilities"
 
 describe("KashiRewardMaker", function () {
   before(async function () {
-    await prepare(this, ["RewardMakerKashi", "StakeReward", "RewardMakerKashiExploitMock", "ERC20Mock", "UniswapV2Factory", "UniswapV2Pair", "BentoBoxV1", "KashiPairMediumRiskV1", "PeggedOracleV1"])
+    await prepare(this, ["RewardMakerKashi", "SwivelStaked", "RewardMakerKashiExploitMock", "ERC20Mock", "UniswapV2Factory", "UniswapV2Pair", "BentoBoxV1", "KashiPairMediumRiskV1", "PeggedOracleV1"])
   })
 
   beforeEach(async function () {
@@ -20,7 +20,7 @@ describe("KashiRewardMaker", function () {
       ["factory", this.UniswapV2Factory, [this.alice.address]],
     ])
     // Deploy Reward and Kashi contracts
-    await deploy(this, [["bar", this.StakeReward, [this.reward.address]]])
+    await deploy(this, [["bar", this.SwivelStaked, [this.reward.address]]])
     await deploy(this, [["bento", this.BentoBoxV1, [this.weth.address]]])
     await deploy(this, [["kashiMaster", this.KashiPairMediumRiskV1, [this.bento.address]]])
     await deploy(this, [["kashiMaker", this.RewardMakerKashi, [this.factory.address, this.bar.address, this.bento.address, this.reward.address, this.weth.address, this.factory.pairCodeHash()]]])

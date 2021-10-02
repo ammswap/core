@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/token/ERC20/SafeERC20.sol";
 import "@openzeppelin/contracts/utils/EnumerableSet.sol";
 import "@openzeppelin/contracts/math/SafeMath.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "./RewardToken.sol";
+import "./SwivelToken.sol";
 
 interface IMigratorChef {
     // Perform LP token migration from legacy UniswapV2 to AMMSwap.
@@ -56,7 +56,7 @@ contract MasterChef is Ownable {
         uint256 accRewardPerShare; // Accumulated REWARDs per share, times 1e12. See below.
     }
     // The REWARD TOKEN!
-    RewardToken public reward;
+    SwivelToken public reward;
     // Dev address.
     address public devaddr;
     // Block number when bonus REWARD period ends.
@@ -84,7 +84,7 @@ contract MasterChef is Ownable {
     );
 
     constructor(
-        RewardToken _reward,
+        SwivelToken _reward,
         address _devaddr,
         uint256 _rewardPerBlock,
         uint256 _startBlock,

@@ -3,11 +3,11 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
 
   const { deployer, dev } = await getNamedAccounts()
 
-  const reward = await ethers.getContract("RewardToken")
+  const reward = await ethers.getContract("SwivelToken")
   
   const { address } = await deploy("MasterChef", {
     from: deployer,
-    args: [reward.address, dev, "1000000000000000000000", "0", "1000000000000000000000"],
+    args: [reward.address, dev, "1000000000000000000", "11000000", "100000000"],
     log: true,
     deterministicDeployment: false
   })
@@ -27,4 +27,4 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
 }
 
 module.exports.tags = ["MasterChef"]
-module.exports.dependencies = ["UniswapV2Factory", "UniswapV2Router02", "RewardToken"]
+module.exports.dependencies = ["UniswapV2Factory", "UniswapV2Router02", "SwivelToken"]

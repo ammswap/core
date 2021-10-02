@@ -15,6 +15,6 @@ analyze:
         - contracts/uniswapv2/UniswapV2Factory.sol:UniswapV2Factory
         - contracts/uniswapv2/UniswapV2ERC20.sol:UniswapV2ERC20
         - contracts/uniswapv2/UniswapV2Router02.sol:UniswapV2Router02
-        - contracts/RewardToken.sol:RewardToken
-        - contracts/StakeReward.sol:StakeReward
+        - contracts/SwivelToken.sol:SwivelToken
+        - contracts/SwivelStaked.sol:SwivelStaked
         - contracts/MasterChef.sol:MasterChef
