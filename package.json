@@ -1,6 +1,6 @@
 {
   "name": "@ammswap/core",
-  "version": "3.0.9",
+  "version": "3.1.0",
   "license": "MIT",
   "types": "./types/index.ts",
   "description": "Core contracts for the AMMSwap protocol",
@@ -53,7 +53,7 @@
     "prepublishOnly": "yarn run build"
   },
   "devDependencies": {
-    "@ammswap/sdk": "^9.0.5",
+    "@ammswap/sdk": "^9.1.4",
     "@boringcrypto/boring-solidity": "boringcrypto/BoringSolidity#e06e943",
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-etherscan": "^2.1.0",
