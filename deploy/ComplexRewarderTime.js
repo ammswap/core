@@ -24,4 +24,4 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
 }
 
 module.exports.tags = ["ComplexRewarderTime"]
-module.exports.dependencies = ["UniswapV2Factory", "UniswapV2Router02","SwivelToken"]
+module.exports.dependencies = ["UniswapV2Factory", "UniswapV2Router02","SwivelToken", "MasterChefV2"]

@@ -19,7 +19,8 @@ import { HardhatUserConfig } from "hardhat/types"
 import { removeConsoleLog } from "hardhat-preprocessor"
 
 const accounts = {
-  mnemonic: process.env.MNEMONIC || "test test test test test test test test test test test junk",
+  //mnemonic: process.env.MNEMONIC || "test test test test test test test test test test test junk",
+  mnem
   // accountsBalance: "990000000000000000000",
 }
 
@@ -205,7 +206,6 @@ const config: HardhatUserConfig = {
       chainId: 43114,
       live: true,
       saveDeployments: true,
-      gasPrice: 470000000000,
     },
     fuji: {
       url: "https://api.avax-test.network/ext/bc/C/rpc",
